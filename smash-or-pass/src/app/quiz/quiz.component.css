@@ -33,7 +33,7 @@ button {
 }
 
 .poke-display {
-   
+   justify-content: center;
 }
 
 .poke-name {
@@ -45,5 +45,10 @@ button {
 .poke-img {
     width: auto; 
     height: 200px;
-    
+    margin: auto;
+}
+
+.counter {
+    justify-content: left;
+    margin-top: 25%;
 }
