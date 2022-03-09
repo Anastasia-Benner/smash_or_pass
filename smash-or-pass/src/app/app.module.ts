@@ -5,16 +5,23 @@ import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { PokeDataService } from './poke-data.service';
 import { HttpClientModule } from '@angular/common/http';
-//import { PokemonClient } from 'pokenode-ts';
+import { QuizMenuComponent } from './quiz-menu/quiz-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizComponent
+    QuizComponent,
+    QuizMenuComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [
     PokeDataService

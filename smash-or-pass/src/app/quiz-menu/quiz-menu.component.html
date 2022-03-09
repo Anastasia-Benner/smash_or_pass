@@ -1,0 +1,16 @@
+<div *ngIf="!submitted; else quiz">
+    <span>
+        <ul>
+          <li *ngFor="let gen of generations">
+            <mat-checkbox [(ngModel)]="gen.picked">
+              {{gen.gen}}
+            </mat-checkbox>
+          </li>
+        </ul>
+      </span>
+    <button (click)="handleSubmit()">submit</button>
+</div>
+
+<ng-template #quiz>
+    <app-quiz [genset]="generations"></app-quiz>
+</ng-template>
