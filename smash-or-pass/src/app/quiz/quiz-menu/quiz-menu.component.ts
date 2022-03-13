@@ -15,7 +15,8 @@ export class QuizMenuComponent implements OnInit {
   constructor(private quiz: QuizServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.quiz.resetGenset();
+    this.generations = this.quiz.getGenSet();
   }
 
   handleSubmit() {

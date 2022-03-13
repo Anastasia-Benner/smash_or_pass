@@ -16,17 +16,17 @@ export interface smashPoke {
   providedIn: 'root'
 })
 export class QuizServiceService {
-
-  private genSet: generation[] = [
-      {gen: 1, picked: false, start: 1, end : 151},
-      {gen: 2, picked: false, start: 152, end: 251},
-      {gen: 3, picked: false, start: 252, end: 386},
-      {gen: 4, picked: false, start: 387, end: 494},
-      {gen: 5, picked: false, start: 495, end: 649},
-      {gen: 6, picked: false, start: 650, end: 721},
-      {gen: 7, picked: false, start: 722, end: 809},
-      {gen: 8, picked: false, start: 810, end: 898}
-    ]
+  private default: generation[] = [
+    {gen: 1, picked: false, start: 1, end : 151},
+    {gen: 2, picked: false, start: 152, end: 251},
+    {gen: 3, picked: false, start: 252, end: 386},
+    {gen: 4, picked: false, start: 387, end: 494},
+    {gen: 5, picked: false, start: 495, end: 649},
+    {gen: 6, picked: false, start: 650, end: 721},
+    {gen: 7, picked: false, start: 722, end: 809},
+    {gen: 8, picked: false, start: 810, end: 898}
+  ];
+  private genSet: generation[] = this.default;
   
   private smashSet: smashPoke[] = [];
   
@@ -46,5 +46,9 @@ export class QuizServiceService {
 
   getSmashed() {
     return this.smashSet;
+  }
+
+  resetGenset() {
+    this.genSet = this.default;
   }
 }
