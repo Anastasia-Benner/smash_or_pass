@@ -1,4 +1,6 @@
-<div class="quiz-container" style="height: max-content;">
-  <!--<app-quiz></app-quiz>-->
-  <app-quiz-menu></app-quiz-menu>
-</div>
+<nav>
+  <a routerLink="/quiz/menu" routerLinkActive="active">Menu</a>
+  <a routerLink="/quiz/quiz" routerLinkActive="active">Quiz</a>
+  <a routerLink="/quiz/results" routerLinkActive="active">Results</a>
+</nav>
+<router-outlet></router-outlet>

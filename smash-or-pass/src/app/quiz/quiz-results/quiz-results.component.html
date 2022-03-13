@@ -1,0 +1,7 @@
+<h1>you wanna fuck {{ getFuckNumber() }} Pokemon!</h1>
+
+<h2>Here they are!</h2>
+<div *ngFor="let poke of smashed">
+    <p>{{ poke.name }}</p>
+    <img [src]="poke.img_path" [alt]="poke.name">
+</div>

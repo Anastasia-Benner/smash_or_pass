@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { QuizComponent } from './quiz/quiz.component';
-import { PokeDataService } from './poke-data.service';
+import { PokeDataService } from './services/poke-data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { QuizMenuComponent } from './quiz-menu/quiz-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { QuizModule } from './quiz/quiz.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    QuizComponent,
-    QuizMenuComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    QuizModule,
+    AppRoutingModule
   ],
   providers: [
     PokeDataService

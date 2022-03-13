@@ -1,4 +1,4 @@
-<div *ngIf="!submitted; else quiz">
+<div>
     <span>
         <ul>
           <li *ngFor="let gen of generations">
@@ -10,7 +10,3 @@
       </span>
     <button (click)="handleSubmit()">submit</button>
 </div>
-
-<ng-template #quiz>
-    <app-quiz [genset]="generations"></app-quiz>
-</ng-template>

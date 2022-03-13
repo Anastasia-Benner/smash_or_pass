@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Pokemon } from 'pokenode-ts';
-import { PokeDataService } from '../poke-data.service';
-import { generation } from '../quiz-menu/quiz-menu.component';
+import { PokeDataService } from 'src/app/services/poke-data.service';
+import { QuizServiceService, generation } from 'src/app/services/quiz-service.service';
+import { Router } from '@angular/router';
 
 interface ResponseItem {
   name:string,
@@ -26,9 +27,12 @@ export class QuizComponent implements OnInit, AfterViewInit {
   name:string = '';
   path:string = '';//"smash-or-pass\\src\\assets\\pokemonImages\\Bulbasaur.png";
   
-  @Input() genset: generation[] = [];
+  genset: generation[] = this.quiz.getGenSet();
 
-  constructor(private service: PokeDataService) { }
+  constructor(
+    private service: PokeDataService, 
+    private quiz:QuizServiceService,
+    private router: Router) { }
   
   ngOnInit(): void {
     this.currentGen = this.genset.shift() || {'gen': 1, 'picked': true, 'start': 1, 'end': 151};
@@ -38,16 +42,9 @@ export class QuizComponent implements OnInit, AfterViewInit {
         this.currentPokemon = result;
         this.name = result.name;
         this.path = `../../assets/pokemonImages/${this.name}.png`;
-        //this.path = result.sprites.other['official-artwork'].front_default ||'';
       }, (error) => { console.log(error)}
     )
-    // this.service.getNextBatch().subscribe(
-    //   (result:any) => {
-    //     this.service.next = result.next;
-    //     this.pokemonArr = result.results;
-    //     console.log(result);
-    //   }
-    // )
+    
     this.loaded = true;
     console.log(this.pokemonArr);
     console.log(this.genset);
@@ -64,16 +61,18 @@ export class QuizComponent implements OnInit, AfterViewInit {
 
   resolveSmash() {
     this.smashed += 1;
+    this.quiz.addSmash({name: this.name, img_path: this.path});
     this.goNext();
   }
 
   resolveNewGen() {
-    if (this.genset){
+    console.log(this.genset);
+    if (this.genset.length){
       this.currentGen = this.genset.shift() || {gen:0, picked: false, start: 1, end: 898};
       this.id = this.currentGen.start;
     }
     else {
-      // logic to terminate quiz 
+       this.router.navigate(['/quiz/results']);
     }
   }
 
@@ -102,6 +101,11 @@ export class QuizComponent implements OnInit, AfterViewInit {
 
   getName() {
     return this.name;
+  }
+
+  skipGen() {
+    this.id = this.currentGen.end;
+    this.goNext()
   }
 
   getPokemonArr() {
