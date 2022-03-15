@@ -1,32 +1,14 @@
-<div *ngIf="loaded">
-    <div class="row" style="height: 100%;">
-        <div class="col-3">
-            <div class="row">
-                <button class="smash" (click)="resolveSmash()">Smash</button>
-            </div>
-            <div class="row">
-                <button class="pass" (click)="resolvePass()">Pass</button>
-            </div>
-            <button (click)="skipGen()">skip (test only)</button>
-        </div>
-    
-        <div class="col-6">
-            <div class="poke-display">
-                <div class="row title">
-                    <h1>{{ id }}</h1>
-                    <h1 class="poke-name">{{ name }}</h1>
-                </div>
-                <div class="row">
-                    <img class="poke-img" [src]="path" [alt]="name">
-                </div>
-            </div>
-        </div>
+<button class="pass" (click)="resolvePass()">Pass</button>
+<button class="smash" (click)="resolveSmash()">Smash</button>
 
-        <div class="col-3">
-            <div class="counter">
-                <p>Smashed: {{smashed}}</p>
-                <p>Passed: {{passed}}</p>
-            </div>
-        </div>
-    </div>
+<div>
+    <h1>{{ id }}. </h1>
+    <h1>{{ name }}</h1>
 </div>
+<img [src]="path" [alt]="name">
+
+<div>
+    <p>Passed: {{passed}}</p>
+    <p>Smashed: {{smashed}}</p>
+</div>
+<button (click)="skipGen()">skip (test only)</button>

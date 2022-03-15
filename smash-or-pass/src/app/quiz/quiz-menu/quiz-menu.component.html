@@ -1,12 +1,10 @@
-<div>
-    <span>
-        <ul>
-          <li *ngFor="let gen of generations">
-            <mat-checkbox [(ngModel)]="gen.picked">
-              {{gen.gen}}
-            </mat-checkbox>
-          </li>
-        </ul>
-      </span>
-    <button (click)="handleSubmit()">submit</button>
-</div>
+<h1>Select Generations</h1>
+<ul>
+  <li *ngFor="let gen of generations">
+    <mat-checkbox [(ngModel)]="gen.picked">
+      {{gen.gen}}
+    </mat-checkbox>
+  </li>
+</ul>
+
+<button (click)="handleSubmit()">Submit</button>

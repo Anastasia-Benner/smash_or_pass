@@ -1,3 +1,9 @@
+* {
+    display:flex;
+    justify-self: center;
+    justify-content: center;
+}
+
 button {
     border: none;
     color: white;
@@ -6,14 +12,12 @@ button {
     font-size: 16px;
     opacity: 0.6;
     transition: 0.3s;
-    display: inline-block;
+    display: inline;
     text-decoration: none;
     cursor: pointer;
-    width: 80%;
-    margin-left: auto;
-    margin-top: 10%;
-    margin-right: 10%;
-    margin-bottom: 9%;
+    width: 30%;
+    margin: 0 10%;
+    justify-content: space-evenly;
 }
 
 .smash {
@@ -42,13 +46,26 @@ button {
     margin: auto;
 }
 
-.poke-img {
-    width: auto; 
-    height: 200px;
+img {
+    height: 300px;
+    width: auto;
     margin: auto;
+    border: 10px solid silver;
+    border-radius: 25px;
 }
 
-.counter {
+p {
+    display: flex;
+    justify-self: center;
+    margin: 0 18%;
+    font-size: 2em;
+}
+
+h1 {
+    text-transform: capitalize;
+    opacity: .6;
+}
+/* .counter {
     justify-content: left;
     margin-top: 25%;
-}
+} */

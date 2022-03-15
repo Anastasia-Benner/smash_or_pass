@@ -1,0 +1,13 @@
+nav {
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 3em;
+}

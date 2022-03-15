@@ -5,9 +5,11 @@ import { QuizMenuComponent } from './quiz-menu/quiz-menu.component';
 import { QuizResultsComponent } from './quiz-results/quiz-results.component';
 
 const routes: Routes = [
-  {path: 'quiz/menu', component: QuizMenuComponent},
-  {path: 'quiz/quiz', component: QuizComponent},
-  {path: 'quiz/results', component: QuizResultsComponent},
+  {path: 'quiz', children: [
+    {path: 'menu', component: QuizMenuComponent},
+    {path: 'quiz', component: QuizComponent},
+    {path: 'results', component: QuizResultsComponent}
+  ]},
 
   {path: '', component: QuizMenuComponent, pathMatch: 'full'},
   {path: '**', component: QuizMenuComponent} //replace with not found page
