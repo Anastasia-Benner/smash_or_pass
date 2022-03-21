@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { PokemonClient } from 'pokenode-ts';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators'
+import { POKE_SHAPES } from 'src/assets/pokemonData/shapedata';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +15,12 @@ export class PokeDataService {
   constructor(private http: HttpClient ) { }
   
   getPokemonById(i:number){
-    return this.http.get(`${this.base_url}pokemon/${i}`);
+    //return this.http.get(`${this.base_url}pokemon/${i}`);
+    return POKE_SHAPES[i-1];
   }
 
-  getNextBatch() { // for some reason pokemonArr isn't getting updated values
-    let url = this.next ? this.next : `${this.base_url}pokemon/?limit=100`;
-    return this.http.get(url);
-  }
+  // getNextBatch() { // for some reason pokemonArr isn't getting updated values
+  //   let url = this.next ? this.next : `${this.base_url}pokemon/?limit=100`;
+  //   return this.http.get(url);
+  // }
 }

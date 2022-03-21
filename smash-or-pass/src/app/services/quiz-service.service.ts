@@ -9,7 +9,8 @@ export interface generation {
 
 export interface smashPoke {
   name: string,
-  img_path: string
+  img_path: string,
+  shape:string
 }
 
 @Injectable({
@@ -42,6 +43,10 @@ export class QuizServiceService {
 
   addSmash(poke:smashPoke) {
     this.smashSet.push(poke);
+  }
+
+  clearSmashed() {
+    this.smashSet = [];
   }
 
   getSmashed() {

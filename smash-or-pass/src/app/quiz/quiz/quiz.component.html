@@ -1,13 +1,14 @@
-<button class="pass" (click)="resolvePass()">Pass</button>
-<button class="smash" (click)="resolveSmash()">Smash</button>
+<div class="buttons">
+    <button class="pass" (click)="resolvePass()">Pass</button>
+    <button class="smash" (click)="resolveSmash()">Smash</button>
+</div>
 
-<div>
-    <h1>{{ id }}. </h1>
-    <h1>{{ name }}</h1>
+<div class="pokeTitle">
+    <h1>{{ id }}. {{ name }}</h1>
 </div>
 <img [src]="path" [alt]="name">
 
-<div>
+<div class="counters">
     <p>Passed: {{passed}}</p>
     <p>Smashed: {{smashed}}</p>
 </div>

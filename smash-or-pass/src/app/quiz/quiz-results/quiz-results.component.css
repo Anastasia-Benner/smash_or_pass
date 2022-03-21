@@ -13,9 +13,9 @@ img {
 }
 
 .image-grid {
-    display: inline-flex;
+    display: flex;
     margin: auto 10%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow: auto;
     flex-direction: row;
     flex-wrap: wrap;

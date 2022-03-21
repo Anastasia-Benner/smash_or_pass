@@ -1,7 +1,8 @@
-* {
-    display:flex;
-    justify-self: center;
-    justify-content: center;
+/* Buttons Start Here */
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 button {
@@ -16,8 +17,8 @@ button {
     text-decoration: none;
     cursor: pointer;
     width: 30%;
-    margin: 0 10%;
-    justify-content: space-evenly;
+    /* margin: 0 10%; */
+    justify-items: space-around;
 }
 
 .smash {
@@ -36,8 +37,11 @@ button {
     opacity: 1;
 }
 
-.poke-display {
-   justify-content: center;
+/* Pokemon Display */
+
+.pokeTitle {
+    display:flex;
+    justify-content: center;
 }
 
 .poke-name {
@@ -46,26 +50,31 @@ button {
     margin: auto;
 }
 
+
 img {
     height: 300px;
     width: auto;
     margin: auto;
     border: 10px solid silver;
     border-radius: 25px;
-}
-
-p {
     display: flex;
     justify-self: center;
-    margin: 0 18%;
-    font-size: 2em;
+}
+
+/* counter Classes */
+
+.counters {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5%;
+    
 }
 
 h1 {
     text-transform: capitalize;
     opacity: .6;
 }
-/* .counter {
-    justify-content: left;
-    margin-top: 25%;
-} */
+
+p {
+    font-size: 2em;
+}
